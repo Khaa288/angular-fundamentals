@@ -1,0 +1,7 @@
+<h1>Profile for {{userName}}</h1>
+
+<button (click)="disableAll()">{{ isValidUserId ? 'dis' : 'en' }}able</button>
+
+<button [disabled]="isValidUserId">Save changes</button>
+
+<router-outlet />
