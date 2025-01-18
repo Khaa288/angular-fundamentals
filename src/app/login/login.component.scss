@@ -1,0 +1,79 @@
+$primary-color: #3498db;
+$hover-color: #2980b9;
+$bg-color: #f4f4f9;
+$input-border-color: #ccc;
+$text-color: #333;
+$button-bg: #3498db;
+$button-hover-bg: #2980b9;
+
+.login-body {
+    font-family: Arial, sans-serif;
+  background-color: $bg-color;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  font-size: 14px;
+  color: $text-color;
+}
+
+.login-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid $input-border-color;
+  border-radius: 4px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+.login-input:focus {
+  outline: none;
+  border-color: $primary-color;
+}
+
+button.login-submit-btn {
+  padding: 10px;
+  background-color: $button-bg;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+button.login-submit-btn:hover {
+  background-color: $button-hover-bg;
+}
+
+button.login-submit-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
