@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-user-profile',
-  imports: [RouterOutlet],
-  templateUrl: './user-profile.component.html',
-  styleUrl: './user-profile.component.scss'
+  selector: 'app-page-page-user-profile',
+  imports: [],
+  templateUrl: './page-user-profile.component.html',
+  styleUrl: './page-user-profile.component.scss'
 })
-export class UserProfileComponent {
+export class PageUserProfileComponent {
   userName = "pro_programmer_123";
   isValidUserId = true;
 

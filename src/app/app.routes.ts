@@ -1,8 +1,11 @@
 import { Routes } from '@angular/router';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import { LoginComponent } from './login/login.component';
+import { PageLoginComponent } from './page-login/page-login.component';
+import { PageUserProfileComponent } from './page-user-profile/page-user-profile.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 export const routes: Routes = [
-    { path: 'user', component: UserProfileComponent },
-    { path: 'login', component: LoginComponent }
+    { path: '', component: PageLoginComponent },
+    { path: 'user', component: PageUserProfileComponent },
+    { path: 'login', component: PageLoginComponent },
+    { path: '**', component: PageNotFoundComponent }
 ];
