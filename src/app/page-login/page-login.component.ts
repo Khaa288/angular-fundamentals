@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-login',
+  selector: 'page-login',
   imports: [],
   templateUrl: './page-login.component.html',
   styleUrl: './page-login.component.scss'
