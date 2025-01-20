@@ -3,6 +3,7 @@ import { PageLoginComponent } from './features/authentication/page-login/page-lo
 import { PageUserProfileComponent } from './features/user-profile/page-user-profile/page-user-profile.component';
 import { PageNotFoundComponent } from './features/page-not-found/page-not-found.component';
 import { PageUserProfileSearchComponent } from './features/user-profile/page-user-profile-search/page-user-profile-search.component';
+import { PageUserProfileDetailComponent } from './features/user-profile/page-user-profile-detail/page-user-profile-detail.component';
 
 const AppName = "Angular Fundamentals";
 
@@ -17,7 +18,7 @@ export const routes: Routes = [
             {
                 path: 'detail',
                 title: `${AppName} • User Profile Detail`, 
-                component: PageUserProfileComponent
+                component: PageUserProfileDetailComponent
             },
             {
                 path: 'search',

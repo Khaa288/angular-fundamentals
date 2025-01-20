@@ -8,6 +8,9 @@
 
 <div *ngFor="let user of this.users">
     <p>{{ user.userId }} &nbsp; {{ user.name }}</p>
-    <a routerLink="/user/detail">View Detail</a>
+    <a routerLink="./detail">View Detail</a>
 </div>
+
+<router-outlet></router-outlet>
+
 

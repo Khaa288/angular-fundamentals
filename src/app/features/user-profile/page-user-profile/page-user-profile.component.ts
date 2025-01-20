@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { ApiServiceService } from '../../../core/services/api-service/api-service.service';
 import { UserProfile } from '../../../core/models/user-profile';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'page-page-user-profile',
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, RouterOutlet],
   templateUrl: './page-user-profile.component.html',
   styleUrl: './page-user-profile.component.scss'
 })
