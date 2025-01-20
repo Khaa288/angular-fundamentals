@@ -1,5 +1,13 @@
 <h1>Profile for {{userName}}</h1>
 
+<br>
 <button (click)="disableAll()">{{ isValidUserId ? 'dis' : 'en' }}able</button>
-
 <button [disabled]="isValidUserId">Save changes</button>
+
+<br>
+
+<div *ngFor="let user of this.users">
+    <p>{{ user.userId }} &nbsp; {{ user.name }}</p>
+    <a routerLink="/user/detail">View Detail</a>
+</div>
+
