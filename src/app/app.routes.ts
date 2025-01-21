@@ -10,10 +10,10 @@ const AppName = "Angular Fundamentals";
 export const routes: Routes = [
     { path: '', title: `${AppName} • Login`, component: PageLoginComponent },
     { path: 'login', title: `${AppName} • Login`, component: PageLoginComponent },
-    { 
-        path: 'user', 
-        title: `${AppName} • User Profile`, 
-        component: PageUserProfileComponent, 
+    { path: 'user', title: `${AppName} • User Profile`, component: PageUserProfileComponent },
+    {
+        path: 'user/:id',
+        title: `${AppName} • User Profile Detail`,
         children: [
             {
                 path: 'detail',

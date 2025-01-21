@@ -1,24 +1,36 @@
 import { Component } from '@angular/core';
-import { ApiServiceService } from '../../../core/services/api-service/api-service.service';
+import { ApiService } from '../../../core/services/api-service/api.service';
 import { UserProfile } from '../../../core/models/user-profile';
 import { CommonModule } from '@angular/common';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'page-page-user-profile',
-  imports: [CommonModule, RouterLink, RouterOutlet],
+  imports: [CommonModule, RouterOutlet],
   templateUrl: './page-user-profile.component.html',
   styleUrl: './page-user-profile.component.scss'
 })
 export class PageUserProfileComponent {
-  users : UserProfile[] = [];
+  users : Observable<UserProfile[]> | undefined;
   userName = "pro_programmer_123";
-  isValidUserId = true;
+  isValidUserId: boolean = true;
+  selectedId: number = 1;
 
-  constructor(private apiService: ApiServiceService) {
+  constructor(
+    private readonly apiService: ApiService, 
+    private readonly route: ActivatedRoute,
+    private readonly router: Router
+  ) {
+    
+  }
+
+  ngOnInit(): void {
     this.users = this.apiService.getUsers();
+  }
 
-    console.log(this.users);
+  goToProfileDetail(userId: number) {
+    this.router.navigate([`./user/${userId}/detail`]);
   }
 
   disableAll() {

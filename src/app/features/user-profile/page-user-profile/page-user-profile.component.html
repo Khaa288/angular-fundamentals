@@ -6,9 +6,9 @@
 
 <br>
 
-<div *ngFor="let user of this.users">
+<div *ngFor="let user of this.users | async">
     <p>{{ user.userId }} &nbsp; {{ user.name }}</p>
-    <a routerLink="./detail">View Detail</a>
+    <button (click)="goToProfileDetail(user.userId)">View Detail</button>
 </div>
 
 <router-outlet></router-outlet>
