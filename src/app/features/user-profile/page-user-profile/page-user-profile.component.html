@@ -5,6 +5,9 @@
 <button [disabled]="isValidUserId">Save changes</button>
 
 <br>
+<br>
+<hr>
+<br>
 
 <div *ngFor="let user of this.users | async">
     <p>{{ user.userId }} &nbsp; {{ user.name }}</p>
