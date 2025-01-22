@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ApiService } from '../../../core/services/api-service/api.service';
 import { UserProfile } from '../../../core/models/user-profile';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -18,8 +18,7 @@ export class PageUserProfileComponent {
   selectedId: number = 1;
 
   constructor(
-    private readonly apiService: ApiService, 
-    private readonly route: ActivatedRoute,
+    private readonly apiService: ApiService,
     private readonly router: Router
   ) {
     
@@ -31,6 +30,10 @@ export class PageUserProfileComponent {
 
   goToProfileDetail(userId: number) {
     this.router.navigate([`./user/${userId}/detail`]);
+  }
+
+  goToProfileManagement() {
+    this.router.navigate([`./user/management`]);
   }
 
   disableAll() {

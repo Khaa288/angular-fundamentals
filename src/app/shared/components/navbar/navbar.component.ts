@@ -8,5 +8,14 @@ import { RouterLink } from '@angular/router';
   styleUrl: './navbar.component.scss'
 })  
 export class NavbarComponent {
-  isLoggedIn = false;
+  isLoggedIn: boolean;
+
+  constructor() {
+    this.isLoggedIn = sessionStorage.getItem('credential') ? true : false;
+  }
+
+  logout() {
+    sessionStorage.removeItem('credential');
+    console.log('asdkhasd');
+  }
 }

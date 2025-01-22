@@ -9,12 +9,12 @@
     </ul>
     <ul class="navbar-menu navbar-menu-right">
       <li class="navbar-item">
-        @if (isLoggedIn) {
+        @if (!isLoggedIn) {
           <a routerLink="/login" class="navbar-link">Login</a>
         }
 
         @else {
-          <a routerLink="/login" class="navbar-link">Logout</a>
+          <a routerLink="/login" class="navbar-link" (click)="logout()">Logout</a>
         }
       </li>
     </ul>
