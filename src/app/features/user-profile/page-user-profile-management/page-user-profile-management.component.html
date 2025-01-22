@@ -1,24 +1,55 @@
-<div class="address-form" formGroupName="profileForm">
-    <h2 class="address-form__title">Nested Profile</h2>
-    <label for="firsname" class="address-form__label">First name:</label>
-    <input id="firsname" type="text" class="address-form__input" formControlName="firsname">
+<div class="profile-form-container">
+    <div class="address-form" [formGroup]="profileForm">
+        <h2 class="address-form__title">Nested Profile</h2>
+        <label for="firstName" class="address-form__label">First name:</label>
+        <input id="firstName" type="text" class="address-form__input" formControlName="firstName">
 
-    <label for="lastname" class="address-form__label">Last name:</label>
-    <input id="lastname" type="text" class="address-form__input" formControlName="lastname">
+        <label for="lastName" class="address-form__label">Last name:</label>
+        <input id="lastName" type="text" class="address-form__input" formControlName="lastName">
 
 
-    <div class="address-form" formGroupName="address">
-        <h2 class="address-form__title">Address</h2>
-        <label for="street" class="address-form__label">Street:</label>
-        <input id="street" type="text" class="address-form__input" formControlName="street">
+        <div class="address-form" formGroupName="address">
+            <h2 class="address-form__title">Address</h2>
+            <label for="street" class="address-form__label">Street:</label>
+            <input id="street" type="text" class="address-form__input" formControlName="street">
 
-        <label for="city" class="address-form__label">City:</label>
-        <input id="city" type="text" class="address-form__input" formControlName="city">
+            <label for="city" class="address-form__label">City:</label>
+            <input id="city" type="text" class="address-form__input" formControlName="city">
 
-        <label for="state" class="address-form__label">State:</label>
-        <input id="state" type="text" class="address-form__input" formControlName="state">
+            <label for="state" class="address-form__label">State:</label>
+            <input id="state" type="text" class="address-form__input" formControlName="state">
 
-        <label for="zip" class="address-form__label">Zip Code:</label>
-        <input id="zip" type="text" class="address-form__input" formControlName="zip">
+            <label for="zip" class="address-form__label">Zip Code:</label>
+            <input id="zip" type="text" class="address-form__input" formControlName="zip">
+        </div>
+        
+        <button type="submit" class="profile-form-submit-btn" (click)="onProfileFormSubmit()">Add Profile</button>
+    </div>
+
+    <div class="address-form" [formGroup]="profileFormUsingBuilder">
+        <h2 class="address-form__title">Nested Profile Using FormBuilder</h2>
+        <label for="firstName" class="address-form__label">First name:</label>
+        <input id="firstName" type="text" class="address-form__input" formControlName="firstName">
+
+        <label for="lastName" class="address-form__label">Last name:</label>
+        <input id="lastName" type="text" class="address-form__input" formControlName="lastName">
+
+
+        <div class="address-form" formGroupName="address">
+            <h2 class="address-form__title">Address</h2>
+            <label for="street" class="address-form__label">Street:</label>
+            <input id="street" type="text" class="address-form__input" formControlName="street">
+
+            <label for="city" class="address-form__label">City:</label>
+            <input id="city" type="text" class="address-form__input" formControlName="city">
+
+            <label for="state" class="address-form__label">State:</label>
+            <input id="state" type="text" class="address-form__input" formControlName="state">
+
+            <label for="zip" class="address-form__label">Zip Code:</label>
+            <input id="zip" type="text" class="address-form__input" formControlName="zip">
+
+            <button type="submit" class="profile-form-submit-btn" (click)="onProfileFormBuilderSubmit()">Add Profile</button>
+        </div>
     </div>
 </div>
