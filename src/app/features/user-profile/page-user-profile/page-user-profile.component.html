@@ -1,0 +1,19 @@
+<h1>Profile for {{userName}}</h1>
+
+<br>
+<button (click)="disableAll()">{{ isValidUserId ? 'dis' : 'en' }}able</button>
+<button [disabled]="isValidUserId">Save changes</button>
+
+<br>
+<br>
+<hr>
+<br>
+
+<div *ngFor="let user of this.users | async">
+    <p>{{ user.userId }} &nbsp; {{ user.name }}</p>
+    <button (click)="goToProfileDetail(user.userId)">View Detail</button>
+</div>
+
+<router-outlet></router-outlet>
+
+
