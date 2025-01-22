@@ -1,0 +1,46 @@
+// Variables for customization
+$primary-color: #4CAF50;
+$hover-color: darken($primary-color, 10%);
+$text-color: #fff;
+$font-size: 16px;
+$border-radius: 5px;
+$padding: 10px 20px;
+$transition-speed: 0.3s;
+
+.profile-management-btn {
+  display: inline-block;
+  font-size: $font-size;
+  color: $text-color;
+  background-color: $primary-color;
+  border: none;
+  border-radius: $border-radius;
+  padding: $padding;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color $transition-speed, transform $transition-speed, box-shadow $transition-speed;
+
+  &:hover {
+    background-color: $hover-color;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px lighten($primary-color, 40%);
+  }
+}
+
+// Example for usage
+.profile-management-btn-secondary {
+  background-color: #007BFF;
+  &:hover {
+    background-color: darken(#007BFF, 10%);
+  }
+}

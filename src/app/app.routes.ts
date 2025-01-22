@@ -4,6 +4,7 @@ import { PageUserProfileComponent } from './features/user-profile/page-user-prof
 import { PageNotFoundComponent } from './features/page-not-found/page-not-found.component';
 import { PageUserProfileSearchComponent } from './features/user-profile/page-user-profile-search/page-user-profile-search.component';
 import { PageUserProfileDetailComponent } from './features/user-profile/page-user-profile-detail/page-user-profile-detail.component';
+import { PageUserProfileManagementComponent } from './features/user-profile/page-user-profile-management/page-user-profile-management.component';
 
 const AppName = "Angular Fundamentals";
 
@@ -11,6 +12,7 @@ export const routes: Routes = [
     { path: '', title: `${AppName} • Login`, component: PageLoginComponent },
     { path: 'login', title: `${AppName} • Login`, component: PageLoginComponent },
     { path: 'user', title: `${AppName} • User Profile`, component: PageUserProfileComponent },
+    { path: 'user/management', title: `${AppName} • User Profile Management`, component: PageUserProfileManagementComponent },
     {
         path: 'user/:id',
         title: `${AppName} • User Profile Detail`,

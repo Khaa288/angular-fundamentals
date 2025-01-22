@@ -20,5 +20,7 @@ export class PageLoginComponent {
 
   onLoginFormSubmit() { 
     console.log(this.loginFormGroup.value);
+
+    sessionStorage.setItem('credential', this.loginFormGroup.value);
   }
 }
