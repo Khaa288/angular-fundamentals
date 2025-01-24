@@ -32,5 +32,8 @@ export const routes: Routes = [
     {
         path: 'lazy', loadComponent: () => import('./shared/components/lazy/lazy.component').then(c => c.LazyComponent)
     },
+    {
+        path: 'signal', loadComponent: () => import('./shared/components/signal/signal.component').then(c => c.SignalComponent)
+    },
     { path: '**', title: `${AppName} • NotFound`, component: PageNotFoundComponent }
 ];

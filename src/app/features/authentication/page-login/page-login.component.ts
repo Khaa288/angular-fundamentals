@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { ValidationService } from './services/validation.service';
+import { ValidationService } from './services/validation/validation.service';
+import { AuthenticationService } from './services/authentication.service';
 
 @Component({
   selector: 'page-login',
@@ -11,7 +12,10 @@ import { ValidationService } from './services/validation.service';
 export class PageLoginComponent {
   loginFormGroup: FormGroup;
 
-  constructor(private readonly validationService: ValidationService) {
+  constructor(
+    private readonly validationService: ValidationService,
+    private readonly authencationService: AuthenticationService
+  ) {
     this.loginFormGroup = new FormGroup({
       username: new FormControl('', [validationService.validateUsername()]),
       password: new FormControl('', [validationService.validatePassword()])
@@ -19,8 +23,7 @@ export class PageLoginComponent {
   }
 
   onLoginFormSubmit() { 
-    console.log(this.loginFormGroup.value);
-
     sessionStorage.setItem('credential', this.loginFormGroup.value);
+    this.authencationService.updateUpdateLoginState();
   }
 }
