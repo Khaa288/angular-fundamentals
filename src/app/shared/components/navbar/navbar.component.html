@@ -5,16 +5,17 @@
         <a routerLink="" class="navbar-link">Home</a>
         <a routerLink="/user" class="navbar-link">User Profile</a>
         <a routerLink="/lazy" class="navbar-link">Lazy</a>
+        <a routerLink="/signal" class="navbar-link">Signal Demo</a>
       </li>
     </ul>
     <ul class="navbar-menu navbar-menu-right">
       <li class="navbar-item">
-        @if (!isLoggedIn) {
+        @if (!isLoggedIn()) {
           <a routerLink="/login" class="navbar-link">Login</a>
         }
 
         @else {
-          <a routerLink="/login" class="navbar-link" (click)="logout()">Logout</a>
+          <a routerLink="/login" class="logout-button" (click)="logout()">Logout</a>
         }
       </li>
     </ul>

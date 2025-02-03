@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, WritableSignal } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { AuthenticationService } from '../../../features/authentication/page-login/services/authentication.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,14 +9,14 @@ import { RouterLink } from '@angular/router';
   styleUrl: './navbar.component.scss'
 })  
 export class NavbarComponent {
-  isLoggedIn: boolean;
+  isLoggedIn: WritableSignal<boolean>;
 
-  constructor() {
-    this.isLoggedIn = sessionStorage.getItem('credential') ? true : false;
+  constructor(private readonly authenticationService: AuthenticationService) {
+    this.isLoggedIn = authenticationService.isLoggedIn;
   }
 
   logout() {
     sessionStorage.removeItem('credential');
-    console.log('asdkhasd');
+    this.authenticationService.updateUpdateLoginState();
   }
 }
